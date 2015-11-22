@@ -26,12 +26,21 @@ require.config({
   // Initialize the application with the main application file.
   deps: ['main'],
 
+  jsx: {
+    fileExtension: '.jsx'
+  },
+
   paths: {
 
     // Libraries.
     jquery:         'vendor/jquery-2.1.4',
     underscore:     'vendor/underscore-1.8.3',
     backbone:       'vendor/backbone-1.2.3',
+    text:           'vendor/require-text',
+    jsx:            'vendor/jsx',
+    JSXTransformer: 'vendor/JSXTransformer-0.13.3',
+    react:          'vendor/react-with-addons-0.14.3',
+    ReactDOM:       'vendor/react-dom-0.14.3',
 
     //My components
     errors:       'components/errors'
@@ -42,6 +51,11 @@ require.config({
     backbone: {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
+    },
+
+    ReactDOM: {
+      deps: ['react'],
+      exports: 'ReactDOM'
     }
   }
 });

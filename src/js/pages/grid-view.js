@@ -4,9 +4,12 @@ define(
   [
     'app',
     'generics/generic-page-view',
-    'jquery'
+    'jquery',
+    'react',
+    'jsx!pages/grid',
+    'ReactDOM'
   ],
-  function(app, gpV, $){
+  function(app, gpV, $, React, grid, ReactDOM){
     var view,
         viewClass;
 
@@ -14,7 +17,13 @@ define(
       render: function(){
         gpV.prototype.render.call(this);
 
-        
+        var start = new Date();
+        Grid = React.createFactory(grid);
+
+        // Mount the JSX component in the app container
+        ReactDOM.render(
+            Grid({start: start}),
+            document.getElementById('js-main'));
         
       },
 
