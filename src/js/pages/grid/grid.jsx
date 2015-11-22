@@ -24,7 +24,7 @@ define(['react'], function(React) {
    */
   var Photos = React.createClass({
     render: function() {
-      return <div className="grid">
+      return <div className="photos grid">
         {this.props.photos.map(function(photo, i){
           return (
             <div className="item" key={photo.id}>

@@ -1,0 +1,47 @@
+/* grid view styles */
+
+
+.photos {
+	overflow: hidden;
+
+	.item {
+		padding: 1em;
+
+		img {
+			height: 8em;
+		}
+
+		.meta {
+			list-style-type: none;
+			padding: 0;
+		}
+	}
+}
+
+.grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	.item {
+		flex-basis: 15%;
+		flex-grow: 1;
+		text-align: center;
+		margin: 0;
+
+		img {
+			margin-bottom: 1em;
+		}
+	}
+}
+
+.rows {
+	.item {
+		display: flex;
+		text-align: left;
+	}
+
+	.meta {
+		margin-left: 1em;
+	}
+}	
