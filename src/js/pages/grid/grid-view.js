@@ -6,7 +6,7 @@ define(
     'generics/generic-page-view',
     'jquery',
     'react',
-    'jsx!pages/grid',
+    'jsx!pages/grid/grid',
     'ReactDOM'
   ],
   function(app, gpV, $, React, grid, ReactDOM){

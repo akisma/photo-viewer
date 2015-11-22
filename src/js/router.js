@@ -15,7 +15,7 @@ function(app, bb) {
     },
 
     index: function() {
-      require(['pages/grid-view'], this.loadModule);
+      require(['pages/grid/grid-view'], this.loadModule);
     }
   });
 
