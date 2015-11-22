@@ -6,6 +6,11 @@
   padding: 0 15%;
 }
 
+.content {
+  /* accounts for footer */
+  margin-bottom: 3em;
+}
+
 .view {
   display: flex;
   flex-direction: column;
@@ -106,28 +111,9 @@ header .actions li {
 }
 
 /* FOOTER - if this gets too big, make a partial */
-html, body {
-  height: 100%;
-}
-
 .footer {
-  clear: both;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: -0.3em;
-}
-.footer #root_footer {
-  height: 0.3em;
-}
-
-#footer {
-  clear: both;
-  position: relative;
-  height: 0.3em;
-}
-
-.footer {
+  position: fixed;
+  bottom: 0;
   background-color: #000000;
   display: block;
   color: #ffffff;
@@ -143,11 +129,23 @@ html, body {
 .grid {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   overflow: hidden;
 }
 .grid .item {
-  flex-basis: 10%;
+  flex-basis: 15%;
   flex-grow: 1;
+  padding: 1em;
+  text-align: center;
+}
+.grid .item img {
+  height: 8em;
+  margin-bottom: 1em;
+}
+.grid .item .meta {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */

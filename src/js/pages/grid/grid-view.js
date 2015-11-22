@@ -10,7 +10,7 @@ define(
     'jsx!pages/grid/grid',
     'stores/photo'
   ],
-  function(app, gpV, $, React, ReactDOM, photo, photoStore){
+  function(app, gpV, $, React, ReactDOM, photos, photoStore){
     var view,
         viewClass;
 
@@ -18,17 +18,13 @@ define(
       render: function(){
         gpV.prototype.render.call(this);
 
-        //get photos
-        var photos = photoStore();
+        var data = photoStore();
 
-        // for (var photo in photos){
-          Photo = React.createFactory(photo);
+        Photos = React.createFactory(photos);
 
-          // Mount the JSX component in the app container
-          ReactDOM.render(
-              Photo({photo: photos[0]}),
-              document.getElementById('js-grid'));
-        // }
+        ReactDOM.render(
+            Photos({photos: data}),
+            document.getElementById('js-grid-container'));
       },
 
       templates: {

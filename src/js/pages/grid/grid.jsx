@@ -22,16 +22,20 @@ define(['react'], function(React) {
   /**
    * <Photo photo={aPhotoObject} />
    */
-  var Photo = React.createClass({
+  var Photos = React.createClass({
     render: function() {
-      var photo = this.props.photo;
-      // JSX code
-      return <div className="item">
-        <img src={photo.imageURL} alt={photo.title} id={photo.id} />
-        <PhotoMeta photo={photo} />
-      </div>;
+      return <div className="grid">
+        {this.props.photos.map(function(photo, i){
+          return (
+            <div className="item" key={photo.id}>
+              <img src={photo.imageURL} alt={photo.title} />
+              <PhotoMeta photo={photo} />
+            </div>
+          );
+        }, this)}
+      </div>
     }
   });
 
-  return Photo;
+  return Photos;
 });
