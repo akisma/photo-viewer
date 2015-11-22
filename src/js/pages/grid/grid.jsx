@@ -1,38 +1,37 @@
 define(['react'], function(React) {
   /**
-   * <TimeMessage elapsed={100} />
+   * <PhotoMeta photo={aPhotoObject} />
    */
-  var TimeMessage = React.createClass({
+  var PhotoMeta = React.createClass({
     render: function() {
-      var elapsed = Math.round(this.props.elapsed  / 100);
-      var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
+      var photo = this.props.photo,
+          date = new Date(photo.date);
+
+      date = date.toDateString() + ' ' + date.toLocaleTimeString();
 
       // JSX code
-      return <p>React has been successfully running for {seconds} seconds.</p>;
+      return <ul className="meta">
+        <li className="title"><b>"{photo.title}"</b></li>
+        <li className="author"><b>Author:</b> {photo.authorName}</li>
+        <li className="date"><b>Taken:</b> {date}</li>
+        <li className="likes"><b>Likes:</b> {photo.likes}</li>
+      </ul>;
     }
   });
 
   /**
-   * <Timer start={aDate} />
+   * <Photo photo={aPhotoObject} />
    */
-  var Timer = React.createClass({
-    getInitialState: function() {
-      return {now: new Date()};
-    },
-
-    componentDidMount: function() {
-      var that = this;
-      setInterval(function() {
-        that.setState({now: new Date()});
-      }, 50);
-    },
-
+  var Photo = React.createClass({
     render: function() {
+      var photo = this.props.photo;
       // JSX code
-      var elapsed = this.state.now.getTime() - this.props.start.getTime();
-      return <TimeMessage elapsed={elapsed} />;
+      return <div className="item">
+        <img src={photo.imageURL} alt={photo.title} id={photo.id} />
+        <PhotoMeta photo={photo} />
+      </div>;
     }
   });
 
-  return Timer;
+  return Photo;
 });

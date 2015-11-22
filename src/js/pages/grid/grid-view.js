@@ -6,10 +6,11 @@ define(
     'generics/generic-page-view',
     'jquery',
     'react',
+    'ReactDOM',
     'jsx!pages/grid/grid',
-    'ReactDOM'
+    'stores/photo'
   ],
-  function(app, gpV, $, React, grid, ReactDOM){
+  function(app, gpV, $, React, ReactDOM, photo, photoStore){
     var view,
         viewClass;
 
@@ -17,14 +18,17 @@ define(
       render: function(){
         gpV.prototype.render.call(this);
 
-        var start = new Date();
-        Grid = React.createFactory(grid);
+        //get photos
+        var photos = photoStore();
 
-        // Mount the JSX component in the app container
-        ReactDOM.render(
-            Grid({start: start}),
-            document.getElementById('js-main'));
-        
+        // for (var photo in photos){
+          Photo = React.createFactory(photo);
+
+          // Mount the JSX component in the app container
+          ReactDOM.render(
+              Photo({photo: photos[0]}),
+              document.getElementById('js-grid'));
+        // }
       },
 
       templates: {
