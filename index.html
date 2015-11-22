@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Project September</title>
+        <meta name="description" content="Photo viewer">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+	  
+	  	<link href="/build/css/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	  	<link href="/build/css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+	  	<script src="/build/js/lib/modernizr-2.8.3.min.js"></script>
+	</head>
+    <body>
+
+        <!-- APP LAYOUT BEGIN -->
+        <div class="wrapper">
+            <header class="container">
+                <h1><a href="/">Project September</a></h1>
+                <ul class="actions">
+                    <li class="button"><a href="/app/grid">grid</a></li>
+                    <li class="button"><a href="/app/rows">rows</a></li>
+                </ul>
+            </div>
+
+            <!-- module views attach here -->
+            <div class="content container js-main">
+            </div>
+        </div>
+
+        <div class="footer container">
+            <p>&copy; Project September 2015</p>
+        </div>
+
+        <!-- APP LAYOUT END -->
+
+        <!-- templates -->
+        <script type="text/html" id="template-global-modal">
+            <div class="modal js-global-modal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3><%= header %></h3>
+                </div>
+                <div class="modal-body">
+                    <p><%= body %></p>
+                </div>
+                <div class="modal-footer">
+                    <form>
+                        <button data-dismiss="modal" class="js-close btn"><%= dismiss %></button>
+                    </form>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/html" id="template-grid-view">
+            <h2>Grid View</h2>
+            <div class="grid js-grid">
+
+            </div>
+        </script>
+
+        <script type="text/javascript" data-main="/src/js/main.js" src="/src/js/vendor/require-2.1.20.js"></script>
+    </body>
+</html>
