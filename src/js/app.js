@@ -81,7 +81,7 @@ define(
       replaceContent: function(content) {
         this.view.$el.empty();
         return $($.trim(content)).appendTo(this.view.$el); //chaining
-      },
+      }
     };
 
     //monitor events.

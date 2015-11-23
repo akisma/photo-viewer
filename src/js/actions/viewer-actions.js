@@ -1,0 +1,1 @@
+/* updateViewType(type) -> updates photo store */

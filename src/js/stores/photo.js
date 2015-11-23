@@ -58,4 +58,13 @@ define([], function(){
 
     return images;
   }
+
+  /* AS A STORE, IF WEBPACK/ETC WERE WORKING */
+  // return {
+  //   viewType: 'grid',
+  //   photos: [],
+  //   getPhotos: function(){
+  //     this.photos = getNextImages();
+  //   }
+  // };
 });

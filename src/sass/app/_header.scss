@@ -1,0 +1,49 @@
+header {
+	display: flex;
+    background-color: #000000;
+    color: #ffffff;
+    overflow: hidden;
+
+    h1 {
+    	flex-basis: 35%;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding-top: 3em; padding-bottom: .3em;
+        margin-top: 0;
+    }
+
+    a, a:visited, a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .nav {
+        flex-basis: 50%;
+
+        .actions {
+        
+            list-style-type: none;
+            margin: 0;
+            padding-top: 3em; padding-bottom: .3em;
+
+            li {
+                width: 20%;
+                float: right;
+
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    padding-left: .3em;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

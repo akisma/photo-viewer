@@ -1,12 +1,13 @@
 define([
   'app',
-  'backbone'
+  'backbone',
+  'components/nav'
 ],
-function(app, bb) {
+function(app, bb, nav) {
 
   var Router = Backbone.Router.extend({
     routes: {
-      '': 'index'
+      '': 'index',
     },
 
     //helper functions
@@ -14,8 +15,13 @@ function(app, bb) {
       app.loadModule(module); 
     },
 
+    loadNav: function(){
+      nav.view.render();
+    },
+
     index: function() {
-      require(['pages/grid/grid-view'], this.loadModule);
+      require(['pages/photo-viewer/view'], this.loadModule);
+      this.loadNav();
     }
   });
 
